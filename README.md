@@ -1,5 +1,5 @@
 # plp-web-hack
-# John Watson - Portfolio Website
+# Charles Mutebwa - Portfolio Website
 
 ![Portfolio Screenshot](IMG_7193.jpeg)
 
