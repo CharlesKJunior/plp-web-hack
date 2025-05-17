@@ -1,9 +1,9 @@
 # plp-web-hack
 # John Watson - Portfolio Website
 
-![Portfolio Screenshot](https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg)
+![Portfolio Screenshot](IMG_7193.jpeg)
 
-A modern, responsive portfolio website for John Watson, a Web Designer & Developer based in the UK.
+A modern, responsive portfolio website for Charles Mutebwa, a Web Designer & Developer based in the UK.
 
 ## Features
 
