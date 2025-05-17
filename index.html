@@ -3,552 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Watson - Web Designer & Developer</title>
+    <title>Charles Mutebwa | Web Developer & Designer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: 60px 0;
-        }
-        
-        h1, h2, h3 {
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        hr {
-            border: 0;
-            height: 1px;
-            background-color: #ddd;
-            margin: 30px 0;
-        }
-        
-        /* Header Section */
-        header {
-            background-color: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .logo span {
-            color: #007bff;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #007bff;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-color: #fff;
-            padding: 180px 0 100px;
-            text-align: center;
-            background-image: url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.6);
-        }
-        
-        .hero .container {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: #fff;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .hero .tagline {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #007bff;
-            margin-bottom: 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #007bff;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #0056b3;
-        }
-        
-        /* About Section */
-        .about {
-            background-color: #f8f9fa;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-image {
-            flex: 1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h2 {
-            margin-bottom: 20px;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-        }
-        
-        .info-list {
-            margin-bottom: 30px;
-        }
-        
-        .info-list div {
-            margin-bottom: 10px;
-        }
-        
-        .info-list span {
-            font-weight: 600;
-            display: inline-block;
-            width: 80px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            transition: background-color 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: #0056b3;
-        }
-        
-        /* Services Section */
-        .services {
-            background-color: #fff;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .service-card h3 {
-            margin-bottom: 15px;
-        }
-        
-        .more-services {
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        .more-services a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        /* Skills Section */
-        .skills {
-            background-color: #f8f9fa;
-        }
-        
-        .skills-content {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .skills-text {
-            flex: 1;
-        }
-        
-        .skills-text h2 {
-            margin-bottom: 20px;
-        }
-        
-        .skills-text p {
-            margin-bottom: 30px;
-        }
-        
-        .skills-list {
-            flex: 1;
-        }
-        
-        .skill-item {
-            margin-bottom: 20px;
-        }
-        
-        .skill-name {
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        /* Stats Section */
-        .stats {
-            background-color: #f3f7fa;
-            color: #1d1515;
-            text-align: center;
-            padding: 80px 0;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-        
-        .stat-item h3 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        
-        /* Portfolio Section */
-        .portfolio {
-            background-color: #fff;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            height: 250px;
-        }
-        
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0,123,255,0.8);
-            color: #fff;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: transform 0.3s;
-        }
-        
-        .portfolio-item:hover .portfolio-overlay {
+        /* Custom styles */
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 60px 0 20px;
-            text-align: center;
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
         }
-        
-        .footer-content {
-            margin-bottom: 40px;
+        .nav-link {
+            position: relative;
         }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s;
         }
-        
-        .footer-links a {
-            color: #fff;
-            text-decoration: none;
+        .nav-link:hover::after {
+            width: 100%;
         }
-        
-        .copyright {
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        /* Additional styles from screenshot */
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .hero-buttons .btn-outline {
-            background-color: transparent;
-            border: 2px solid #fff;
-        }
-
-        .hero-buttons .btn-outline:hover {
-            background-color: rgba(255,255,255,0.1);
+        .active::after {
+            width: 100%;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">John<span>Watson</span></div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
+    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold">
+                    <span class="gradient-text">Charles</span>Mutebwa
+                </a>
+                
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
+                
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <ul class="space-y-3">
+                    <li><a href="#home" class="block py-2">Home</a></li>
+                    <li><a href="#about" class="block py-2">About</a></li>
+                    <li><a href="#skills" class="block py-2">Skills</a></li>
+                    <li><a href="#projects" class="block py-2">Projects</a></li>
+                    <li><a href="#services" class="block py-2">Services</a></li>
+                    <li><a href="#contact" class="block py-2">Contact</a></li>
+                </ul>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Hi, I'm John Watson</h1>
-            <p class="tagline">Web Designer & Developer</p>
-            <p>I love Graphic design and Photography and have been working on my portfolio since 2016. I Can give your business a new Creative start right away!</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn">Hire Me</a>
-                <a href="#portfolio" class="btn btn-outline">My Portfolio</a>
+    <section id="home" class="min-h-screen flex items-center pt-20" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/5952738/pexels-photo-5952738.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center/cover;">
+        <div class="container mx-auto px-6 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-aos="fade-down">
+                Hi, I'm <span class="gradient-text">Charles Mutebwa</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" data-aos="fade-down" data-aos-delay="100">
+                Web Developer & UI/UX Designer creating digital experiences that matter
+            </p>
+            <p class="text-lg mb-12 max-w-3xl mx-auto" data-aos="fade-down" data-aos-delay="200">
+                Recent Computer Science graduate specializing in full-stack development and design. 
+                I build responsive, accessible, and performant websites and applications.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition duration-300 transform hover:scale-105">
+                    Hire Me
+                </a>
+                <a href="#projects" class="border-2 border-white text-white px-8 py-3 rounded-full font-medium transition duration-300 transform hover:scale-105 hover:bg-white hover:text-gray-900">
+                    View My Work
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            
-            <h2>MY BIOGRAPHY</h2>
-            <p>A Lead UI Designer & Web Developer Based In UK</p>
-            
-            <div class="about-content">
-                <div class="about-text">
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                         alt="Charles Mutebwa" 
+                         class="rounded-xl shadow-2xl w-full max-w-md mx-auto">
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold mb-6">
+                        About <span class="gradient-text">Me</span>
+                    </h2>
+                    <p class="text-lg mb-6">
+                        I'm a passionate web developer and designer with an Associate's Degree in Computer Science. 
+                        I specialize in creating modern, responsive websites and applications that deliver exceptional user experiences.
+                    </p>
+                    <p class="text-lg mb-8">
+                        With expertise in both front-end and back-end development, I bring a comprehensive approach to every project. 
+                        My design skills ensure that applications are not only functional but also visually appealing and intuitive.
+                    </p>
                     
-                    <p>I love Graphic design and Photography and have been working on my portfolio since 2016. I Can give your business a new Creative start right away! Contact me and we will discuss your projects!</p>
-                    
-                    <div class="info-list">
-                        <div><span>Name:</span> John Watson</div>
-                        <div><span>Email:</span> example@mail.com</div>
-                        <div><span>From:</span> London, UK</div>
-                        <div><span>Phone:</span> +21 234 567 8901</div>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="bi bi-person-fill text-blue-600 text-xl mr-2"></i>
+                            <span><strong>Name:</strong> Charles Mutebwa</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="bi bi-envelope-fill text-blue-600 text-xl mr-2"></i>
+                            <span><strong>Email:</strong> mutebwacharles@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="bi bi-geo-alt-fill text-blue-600 text-xl mr-2"></i>
+                            <span><strong>From:</strong> Kampala, Uganda</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="bi bi-telephone-fill text-blue-600 text-xl mr-2"></i>
+                            <span><strong>Phone:</strong> +256 776 629 018</span>
+                        </div>
                     </div>
                     
-                    <p>Follow me on</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f">Facebook</i></a>
-                        <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
-                        <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i>LinkedIn</a>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 text-white p-3 rounded-full hover:bg-gray-900 transition">
+                            <i class="bi bi-github"></i>
+                        </a>
                     </div>
                     
-                    <div>
-                        <a href="#contact" class="btn">Hire me</a>
-                        <a href="#" class="btn" style="background-color: #6c757d; margin-left: 15px;">Download CV</a>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition">
+                            Hire Me
+                        </a>
+                        <a href="#" class="border border-gray-300 hover:bg-gray-100 text-gray-800 px-6 py-3 rounded-full font-medium transition">
+                            Download CV
+                        </a>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg" alt="John Watson">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>What I Do For You</h2>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Web Development</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit accusa nitum dolor emque laudan.</p>
-                </div>
-                <div class="service-card">
-                    <h3>App development</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit accusa nitum dolor emque laudan.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Photography</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit accusa nitum dolor emque laudan.</p>
-                </div>
-            </div>
-            
-            <div class="more-services">
-                <a href="#">More Services →</a>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2>MY SKILLS</h2>
-            <p>My Featured Skills</p>
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="text-3xl font-bold mb-4">
+                    My <span class="gradient-text">Skills</span>
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto">
+                    I've developed a diverse skill set that allows me to handle all aspects of web development and design
+                </p>
+            </div>
             
-            <div class="skills-content">
-                <div class="skills-text">
-                    <p>I specialize in Branding and Strategy, and am passionate about creating Awesome Portfolio work. And I always ready to impress the audience with my Creativity.</p>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-xl font-semibold mb-6">Technical Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>HTML/CSS/JavaScript</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>PHP & MySQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>UI/UX Design</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>React (Learning)</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skills-list">
-                    <div class="skill-item">
-                        <div class="skill-name">UI/UX Design</div>
-                        <div style="background-color: #ddd; height: 10px; border-radius: 5px;">
-                            <div style="background-color: #007bff; width: 90%; height: 100%; border-radius: 5px;"></div>
+                
+                <div data-aos="fade-left">
+                    <h3 class="text-xl font-semibold mb-6">Professional Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Problem Solving</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full skill-bar" style="width: 90%"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">Ideas & Technology</div>
-                        <div style="background-color: #ddd; height: 10px; border-radius: 5px;">
-                            <div style="background-color: #007bff; width: 80%; height: 100%; border-radius: 5px;"></div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Communication</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">Branding Design</div>
-                        <div style="background-color: #ddd; height: 10px; border-radius: 5px;">
-                            <div style="background-color: #007bff; width: 95%; height: 100%; border-radius: 5px;"></div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Teamwork</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full skill-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Project Management</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-600 h-2.5 rounded-full skill-bar" style="width: 80%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -556,130 +289,656 @@
         </div>
     </section>
 
-    <!-- Extended Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="services-grid" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="service-card" style="text-align: center;">
-                    <h3>Web Development</h3>
-                    <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="text-3xl font-bold mb-4">
+                    Featured <span class="gradient-text">Projects</span>
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto">
+                    Here are some of my recent projects that showcase my skills and capabilities
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card rounded-xl overflow-hidden shadow-lg relative" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Bus Booking System" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 transform translate-y-10 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Online Bus Booking System</h3>
+                        <p class="text-gray-200 mb-4">
+                            A comprehensive management system for bus operators with real-time booking capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">PHP</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">MySQL</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Bootstrap</span>
+                        </div>
+                        <a href="#" class="text-white font-medium hover:underline self-start">
+                            View Details <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="service-card" style="text-align: center;">
-                    <h3>Research & Analysis</h3>
-                    <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+                
+                <!-- Project 2 -->
+                <div class="project-card rounded-xl overflow-hidden shadow-lg relative" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="School Management System" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 transform translate-y-10 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">International School Website</h3>
+                        <p class="text-gray-200 mb-4">
+                            A multi-role platform for administrators, teachers, students, and parents with various functionalities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">HTML/CSS</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">PHP</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">MySQL</span>
+                        </div>
+                        <a href="#" class="text-white font-medium hover:underline self-start">
+                            View Details <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="service-card" style="text-align: center;">
-                    <h3>Responsive design</h3>
-                    <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+                
+                <!-- Project 3 -->
+                <div class="project-card rounded-xl overflow-hidden shadow-lg relative" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="E-commerce Platform" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 transform translate-y-10 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-200 mb-4">
+                            A full-featured online store with product management, cart, and checkout functionality.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Node.js</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">MongoDB</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                        </div>
+                        <a href="#" class="text-white font-medium hover:underline self-start">
+                            View Details <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="service-card" style="text-align: center;">
-                    <h3>Design Trends</h3>
-                    <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+                
+                <!-- Project 4 -->
+                <div class="project-card rounded-xl overflow-hidden shadow-lg relative" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" 
+                         alt="Portfolio Website" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 transform translate-y-10 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Photography Portfolio</h3>
+                        <p class="text-gray-200 mb-4">
+                            A stunning portfolio website for a professional photographer with gallery and contact features.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">HTML/CSS</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Lightbox</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Responsive</span>
+                        </div>
+                        <a href="#" class="text-white font-medium hover:underline self-start">
+                            View Details <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="service-card" style="text-align: center;">
-                    <h3>Customer support</h3>
-                    <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+                
+                <!-- Project 5 -->
+                <div class="project-card rounded-xl overflow-hidden shadow-lg relative" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                         alt="Weather App" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 transform translate-y-10 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Weather Dashboard</h3>
+                        <p class="text-gray-200 mb-4">
+                            A weather application showing current conditions and forecasts using API integration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">API</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Bootstrap</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Local Storage</span>
+                        </div>
+                        <a href="#" class="text-white font-medium hover:underline self-start">
+                            View Details <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="service-card" style="text-align: center;">
-                    <h3>PSD Design</h3>
-                    <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+                
+                <!-- Project 6 -->
+                <div class="project-card rounded-xl overflow-hidden shadow-lg relative" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Task Manager" 
+                         class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent opacity-0 transform translate-y-10 transition-all duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-white text-xl font-bold mb-2">Task Management App</h3>
+                        <p class="text-gray-200 mb-4">
+                            A productivity application for creating, organizing, and tracking tasks and projects.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Firebase</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Material UI</span>
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">CRUD</span>
+                        </div>
+                        <a href="#" class="text-white font-medium hover:underline self-start">
+                            View Details <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+                    View All Projects <i class="bi bi-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="text-3xl font-bold mb-4">
+                    My <span class="gradient-text">Services</span>
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto">
+                    Comprehensive solutions tailored to meet your digital needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-600 mb-6">
+                        Custom website development with clean, efficient code. Responsive designs that work perfectly on all devices.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Front-end development
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Back-end integration
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            CMS implementation
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="bi bi-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">UI/UX Design</h3>
+                    <p class="text-gray-600 mb-6">
+                        User-centered designs that enhance usability and create engaging digital experiences.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Wireframing & prototyping
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            User research & testing
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Interaction design
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Mobile-First Design</h3>
+                    <p class="text-gray-600 mb-6">
+                        Designs that prioritize mobile users while ensuring seamless experiences across all devices.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Responsive layouts
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Touch-friendly interfaces
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Performance optimization
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="bi bi-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Database Design</h3>
+                    <p class="text-gray-600 mb-6">
+                        Efficient database architectures that ensure data integrity and optimal performance.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            MySQL/MongoDB design
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Data modeling
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Query optimization
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="bi bi-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Photography</h3>
+                    <p class="text-gray-600 mb-6">
+                        Professional photography services for your website, portfolio, or marketing materials.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Product photography
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Portrait sessions
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Event coverage
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-600 text-4xl mb-6">
+                        <i class="bi bi-graph-up"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">SEO Optimization</h3>
+                    <p class="text-gray-600 mb-6">
+                        Improve your website's visibility and ranking on search engines with proven SEO strategies.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Keyword research
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            On-page optimization
+                        </li>
+                        <li class="flex items-center">
+                            <i class="bi bi-check-circle-fill text-green-500 mr-2"></i>
+                            Performance audits
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>135</h3>
-                    <p>Finished Projects</p>
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="text-3xl font-bold mb-4">
+                    Client <span class="gradient-text">Testimonials</span>
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto">
+                    What people say about my work
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl" data-aos="zoom-in">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Charles transformed our outdated website into a modern, user-friendly platform. His attention to detail and understanding of our business needs was exceptional."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" 
+                             alt="Sarah Johnson" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">Marketing Director, TechSolutions</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <h3>225</h3>
-                    <p>Working Hours</p>
+                
+                <div class="bg-gray-50 p-8 rounded-xl" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "The bus booking system Charles developed has streamlined our operations significantly. His technical expertise and problem-solving skills are top-notch."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                             alt="Michael Omondi" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Omondi</h4>
+                            <p class="text-gray-500 text-sm">Operations Manager, SwiftTransit</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <h3>115</h3>
-                    <p>Online Support</p>
-                </div>
-                <div class="stat-item">
-                    <h3>272</h3>
-                    <p>Happy Customers</p>
+                
+                <div class="bg-gray-50 p-8 rounded-xl" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Working with Charles on our school's website was a pleasure. He delivered exactly what we needed on time and within budget. Highly recommended!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" 
+                             alt="Grace Mwangi" 
+                             class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Grace Mwangi</h4>
+                            <p class="text-gray-500 text-sm">Principal, Global Academy</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Success Work</h2>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="text-3xl font-bold mb-4">
+                    Get In <span class="gradient-text">Touch</span>
+                </h2>
+                <p class="text-lg max-w-2xl mx-auto">
+                    Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!
+                </p>
             </div>
             
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photos/3932930/pexels-photo-3932930.jpeg" alt="Massage Spa">
-                    <div class="portfolio-overlay">
-                        <h3>MASSAGE SPA</h3>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-blue-400 text-2xl mr-4 mt-1">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <p class="text-gray-300">mutebwacharles@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-blue-400 text-2xl mr-4 mt-1">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Phone</h4>
+                                <p class="text-gray-300">+256 776 629 018</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-blue-400 text-2xl mr-4 mt-1">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Location</h4>
+                                <p class="text-gray-300">89 Kisaasi Kurambiro, Kampala, Uganda</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h3 class="text-xl font-bold mb-6">Follow Me</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-700 hover:bg-blue-600 text-white p-3 rounded-full transition">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-blue-400 text-white p-3 rounded-full transition">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-pink-600 text-white p-3 rounded-full transition">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-blue-700 text-white p-3 rounded-full transition">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-gray-800 text-white p-3 rounded-full transition">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photos/5824879/pexels-photo-5824879.jpeg" alt="Kitchen Natural">
-                    <div class="portfolio-overlay">
-                        <h3>KITCHEN NATURAL</h3>
-                    </div>
+                
+                <div data-aos="fade-left">
+                    <form class="space-y-6" action="https://formspree.io/f/xvgagdab" method="POST">
+    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <label for="name" class="block mb-2 font-medium">Your Name</label>
+            <input type="text" id="name" name="name" 
+                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                   required>
+        </div>
+        <div>
+            <label for="email" class="block mb-2 font-medium">Your Email</label>
+            <input type="email" id="email" name="email" 
+                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                   required>
+        </div>
+    </div>
+    
+    <div>
+        <label for="subject" class="block mb-2 font-medium">Subject</label>
+        <input type="text" id="subject" name="subject" 
+               class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+               required>
+    </div>
+    
+    <div>
+        <label for="message" class="block mb-2 font-medium">Message</label>
+        <textarea id="message" name="message" rows="5" 
+                  class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                  required></textarea>
+    </div>
+    
+    <button type="submit" 
+            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition duration-300 w-full md:w-auto">
+        Send Message
+    </button>
+</form>
                 </div>
-                <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg" alt="UI Portfolio">
-                    <div class="portfolio-overlay">
-                        <h3>UI Portfolio</h3>
-                    </div>
-                </div>
-            
-                <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photos/3932930/pexels-photo-3932930.jpeg" alt="Massage Spa">
-                    <div class="portfolio-overlay">
-                        <h3>MASSAGE SPA</h3>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photos/5824879/pexels-photo-5824879.jpeg" alt="Kitchen Natural">
-                    <div class="portfolio-overlay">
-                        <h3>KITCHEN NATURAL</h3>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg" alt="UI Portfolio">
-                    <div class="portfolio-overlay">
-                        <h3>UI Portfolio</h3>
-                    </div>
-                </div>
-            
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <p>© UI Portfolio</p>
-                <p>+12 345 678 900 | info@example.com</p>
-                <p>208 Avenue street, UK - 62617.</p>
+    <footer class="bg-gray-900 text-gray-400 border-t border-gray-800 py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold">
+                        <span class="gradient-text">Charles</span>Mutebwa
+                    </a>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+                    <a href="#home" class="hover:text-white transition">Home</a>
+                    <a href="#about" class="hover:text-white transition">About</a>
+                    <a href="#skills" class="hover:text-white transition">Skills</a>
+                    <a href="#projects" class="hover:text-white transition">Projects</a>
+                    <a href="#services" class="hover:text-white transition">Services</a>
+                    <a href="#contact" class="hover:text-white transition">Contact</a>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-white transition">
+                        <i class="bi bi-facebook text-xl"></i>
+                    </a>
+                    <a href="https://x.com/mutebwacharles" class="hover:text-white transition">
+                        <i class="bi bi-twitter text-xl"></i>
+                    </a>
+                    <a href="https://www.threads.com/@mutebwa_charles?xmt=AQF0gb94FzgDlWZ1bfGSYJLrieO82Ahp-KCRM7EbJJaXW80" class="hover:text-white transition">
+                        <i class="bi bi-instagram text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/charles-mutebwa-57a19a270/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BLQUoUzM7QKaG8Y6wJzUAyA%3D%3D" class="hover:text-white transition">
+                        <i class="bi bi-linkedin text-xl"></i>
+                    </a>
+                </div>
             </div>
-            <div class="footer-links">
-                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
-                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+                <p>&copy; 2023 Charles Mutebwa. All rights reserved.</p>
             </div>
-            <p class="copyright">© 2025 John Watson. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="hidden fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animate skill bars when they come into view
+        const skillBars = document.querySelectorAll('.skill-bar');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const width = entry.target.style.width;
+                    entry.target.style.width = '0';
+                    setTimeout(() => {
+                        entry.target.style.width = width;
+                    }, 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.5});
+
+        skillBars.forEach(bar => {
+            observer.observe(bar);
+        });
+    </script>
 </body>
 </html>
